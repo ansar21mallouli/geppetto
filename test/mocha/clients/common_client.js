@@ -285,6 +285,12 @@ class CommonClient {
     if (number%10 === 0) return deca[Math.floor(number/10)-2] + 'ieth';
     return deca[Math.floor(number/10)-2] + 'y-' + special[number%10];
   }
+
+  async checkSelectedValue(selector, textToCheckWith, wait = 0) {
+    await this.waitFor(wait);
+    await this.waitFor(selector);
+    await page.$eval(selector + ' > option[selected]', el => el.innerText).then((text) => expect(text).to.equal(textToCheckWith));
+  }
 }
 
 module.exports = CommonClient;
