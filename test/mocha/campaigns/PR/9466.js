@@ -36,8 +36,8 @@ scenario('This scenario is based on the bug described in this PR: https://github
       test('should select the "Product with combination" radio button', () => client.waitForAndClick(AddProduct.Basic_settings.combination_radio_button));
       test('should go to "Combinations" tab', () => client.waitForAndClick(AddProduct.quantity_combination_tab));
       test('should choose the combinations', async () => {
-        await client.waitForAndClick(AddProduct.Combination.combination_size_s, 1000);
-        await client.waitForAndClick(AddProduct.Combination.combination_size_m, 1000);
+        await client.waitForAndClick(AddProduct.Combination.attribute_size_checkbox_button.replace('%ID', 1), 1000);
+        await client.waitForAndClick(AddProduct.Combination.attribute_size_checkbox_button.replace('%ID', 2), 1000);
       });
       test('should click on "Generate" button', async () => {
         await client.checkBrowserMessage('');
