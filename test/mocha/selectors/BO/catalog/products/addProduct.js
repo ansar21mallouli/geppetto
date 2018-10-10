@@ -2,6 +2,7 @@ module.exports = {
   AddProduct: {
     quantity_combination_tab: '#tab_step3 > a',
     options_tab: '#tab_step6 > a',
+    seo_tab: '#tab_step5 > a',
     success_message: '#growls-default div.growl-message',
     save_button: 'button.js-btn-save[type=submit]',
     online_switcher: '.switch-input',
@@ -38,6 +39,10 @@ module.exports = {
     Options: {
       add_customization_button: '#custom_fields > a',
       customization_input: '#form_step6_custom_fields_0_label_1',
+    },
+
+    SEO: {
+      seo_url_link: '#step5 a',
     }
   }
 };
