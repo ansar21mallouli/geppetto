@@ -5,8 +5,10 @@ module.exports = {
     shopname_link: '#header_shopname',
     multistore_link: '#header_shop > li > a',
     link_shop: '#header_shop  li:nth-child(%D) > a.link-shop i',
-    shopname_button:'#header_shop',
-    shopname_option:'#header_shop li:nth-child(%ID) > a:nth-child(1)',
-    symfony_toolbar_close_button: 'div[id*="sfToolbarMainContent"][style="display: block;"] a.hide-button'
+    shopname_button: '#header_shop',
+    shopname_option: '#header_shop li:nth-child(%ID) > a:nth-child(1)',
+    symfony_toolbar_close_button: 'div[id*="sfToolbarMainContent"][style="display: block;"] a.hide-button',
+    quick_access_button: '#quick_select',
+    quick_access_link: '#header_quick li:nth-child(%B) a, #quick-access-container a:nth-child(%B)'
   }
 };
