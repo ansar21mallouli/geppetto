@@ -48,7 +48,7 @@ module.exports = {
         installed_modules_tabs: '#subtab-AdminModulesManage',
         notifications_tabs: '#subtab-AdminModulesNotifications',
         selection_tab: '#subtab-AdminModulesCatalog',
-        modules_catalog_submenu: '#subtab-AdminAddonsCatalog',
+        modules_catalog_submenu: '#subtab-AdminParentModulesCatalog',
       },
       Design: {
         design_menu: '#subtab-AdminParentThemes',
