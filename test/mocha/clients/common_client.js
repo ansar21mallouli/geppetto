@@ -166,6 +166,11 @@ class CommonClient {
         await this.waitFor(selector);
         await page.$eval(selector, el => el.innerText).then((text) => expect(text).to.contain(textToCheckWith));
         break;
+      case "notequal":
+        await this.waitFor(wait);
+        await this.waitFor(selector);
+        await page.$eval(selector, el => el.innerText).then((text) => expect(text).to.not.equal(textToCheckWith));
+        break;
     }
   }
 
@@ -280,11 +285,11 @@ class CommonClient {
   }
 
   stringifyNumber(number) {
-    let special = ['zeroth','first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth'];
+    let special = ['zeroth', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth'];
     let deca = ['twent', 'thirt', 'fort', 'fift', 'sixt', 'sevent', 'eight', 'ninet'];
     if (number < 20) return special[number];
-    if (number%10 === 0) return deca[Math.floor(number/10)-2] + 'ieth';
-    return deca[Math.floor(number/10)-2] + 'y-' + special[number%10];
+    if (number % 10 === 0) return deca[Math.floor(number / 10) - 2] + 'ieth';
+    return deca[Math.floor(number / 10) - 2] + 'y-' + special[number % 10];
   }
 
   async closeWindow() {
